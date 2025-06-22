@@ -2,9 +2,10 @@ pipeline {
     agent any
 
     environment {
-        SONARQUBE = 'MySonar' // Убедись, что настроено в Jenkins → Configure System
+        SONARQUBE = 'MySonar'
     }
 
+    stages {
         stage('Install deps & test') {
             steps {
                 sh 'pip install -r requirements.txt'
@@ -27,3 +28,4 @@ pipeline {
         }
     }
 }
+
