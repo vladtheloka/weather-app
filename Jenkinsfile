@@ -5,15 +5,10 @@ pipeline {
         SONARQUBE = 'MySonar' // Убедись, что настроено в Jenkins → Configure System
     }
 
-    tools {
-        // maven не нужен, Sonar запускается руками
-        // python установлен внутри docker-образа
-    }
-
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/yourname/weather-app.git' // или локальный путь
+                git 'https://github.com/vladtheloka/weather-app.git' // или локальный путь
             }
         }
 
